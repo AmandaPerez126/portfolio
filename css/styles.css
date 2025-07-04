@@ -1,4 +1,3 @@
-/* Variables y reset */
 :root {
     --primary: #2a2a72;
     --secondary: #009688;
@@ -15,7 +14,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,37 +23,40 @@ body {
     color: var(--dark);
 }
 
-/* Estructura general */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    box-sizing: border-box; /* Asegura que el padding no añada al ancho */
+    box-sizing: border-box;
 }
 
-/* Navegación */
 .header {
     background-color: rgba(18, 18, 18, 0.95);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra para mejor visibilidad */
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
-    color: var(--light);
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.5rem 0; /* Añade un poco de padding para mejor clic */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px;
 }
 
 .navbar {
@@ -72,7 +74,7 @@ body {
 .nav-menu li a {
     color: var(--light);
     text-decoration: none;
-    padding: 0.8rem 1.2rem; /* Aumenta el padding para mejor área de clic */
+    padding: 0.8rem 1.2rem;
     transition: color 0.3s, background-color 0.3s;
     border-radius: 5px;
 }
@@ -89,7 +91,7 @@ body {
     justify-content: space-around;
     width: 30px;
     height: 25px;
-    z-index: 1001; /* Asegura que el menú esté por encima del contenido */
+    z-index: 1001;
 }
 
 .hamburger .bar {
@@ -100,7 +102,6 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* Animación del hamburguesa */
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
@@ -111,24 +112,22 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: var(--light);
     background-color: rgb(96, 104, 110);
-    background-attachment: fixed; /* Efecto parallax */
-    padding-top: 60px; /* Espacio para el header fijo */
+    background-attachment: fixed;
+    padding-top: 60px;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 2rem;
-    background-color: rgba(18, 18, 18, 0.7); /* Fondo semi-transparente para el texto */
+    background-color: rgba(18, 18, 18, 0.7);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
@@ -146,15 +145,15 @@ body {
     margin-bottom: 2.5rem;
     animation: fadeInUp 1.2s ease forwards;
     animation-delay: 0.3s;
-    opacity: 0; /* Empieza oculto para la animación */
+    opacity: 0;
 }
 
 .btn {
     display: inline-block;
     background: var(--accent);
     color: white;
-    padding: 14px 32px; /* Aumenta el padding */
-    border-radius: 50px; /* Bordes más redondeados */
+    padding: 14px 32px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -164,7 +163,7 @@ body {
     cursor: pointer;
     animation: fadeInUp 1.2s ease forwards;
     animation-delay: 0.6s;
-    opacity: 0; /* Empieza oculto para la animación */
+    opacity: 0;
 }
 
 .btn:hover {
@@ -173,9 +172,8 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Secciones generales */
 section {
-    padding: 6rem 0; /* Más padding para las secciones */
+    padding: 6rem 0;
     text-align: center;
 }
 
@@ -199,7 +197,6 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Proyectos */
 .projects {
     background: var(--light);
 }
@@ -207,64 +204,55 @@ section h2::after {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2.5rem; /* Aumenta el espacio entre tarjetas */
+    gap: 2.5rem;
     margin-top: 3rem;
-    justify-content: center; /* Centra las tarjetas si no llenan la cuadrícula */
-    align-items: stretch; /* Asegura que todas las tarjetas tengan la misma altura */
+    justify-content: center;
+    align-items: stretch;
 }
 
 .project-card {
     background: white;
-    border-radius: 15px; /* Bordes más redondeados */
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left; /* Alinea el texto a la izquierda dentro de la tarjeta */
+    text-align: left;
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-12px); /* Desplazamiento más pronunciado */
+    transform: translateY(-12px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 .project-card img {
     width: 100%;
-    height: 220px; /* Ajusta la altura de la imagen */
+    height: 220px;
     object-fit: cover;
     border-bottom: 1px solid #eee;
-}
-
-.project-card-content {
-    padding: 1.5rem;
-    flex-grow: 1; /* Permite que el contenido se expanda */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .project-card h3 {
     font-size: 1.6rem;
     color: var(--primary);
-    margin-bottom: 0.8rem;
+    margin: 0.8rem 0 0.3rem 0.5em;
 }
 
 .project-card p {
     font-size: 1rem;
     color: #555;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0.7em;
 }
 
-/* Sobre Mí */
 .about {
-    background-color: #f0f0f5; /* Un fondo ligeramente diferente */
+    background-color: #f0f0f5;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido verticalmente */
+    align-items: center;
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
@@ -309,7 +297,6 @@ section h2::after {
     transform: translateY(-3px);
 }
 
-/* Contacto */
 .contact {
     background-color:rgb(96, 104, 110) ;
     color: white;
@@ -319,47 +306,23 @@ section h2::after {
     color: white;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.1);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+.contact h3 {
+    margin: 1rem 0;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 1rem;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 8px;
-    background: rgba(255,255,255,0.05);
-    color: white;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+.correo {
+    color: #2a2a72;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: rgba(255,255,255,0.7);
+.correo:hover {
+    color: var(--accent);
+    text-decoration: underline;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent);
-    background-color: rgba(255,255,255,0.1);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* Footer */
 .footer {
     background-color: var(--dark);
     color: var(--light);
@@ -389,7 +352,6 @@ section h2::after {
     color: rgba(255,255,255,0.7);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .hero-content h1 {
         font-size: 3rem;
@@ -398,30 +360,30 @@ section h2::after {
 
 @media (max-width: 768px) {
     .navbar .nav-menu {
-        display: none; /* Oculta el menú grande en móvil */
+        display: none;
     }
 
     .hamburger {
-        display: flex; /* Muestra el icono de hamburguesa */
+        display: flex;
     }
 
     .nav-menu.active {
-        display: flex; /* Muestra el menú cuando está activo */
+        display: flex;
         flex-direction: column;
         position: fixed;
-        top: 70px; /* Debajo del header */
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: var(--dark);
         box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         padding: 1rem 0;
-        transform: translateY(-100%); /* Empieza arriba de la pantalla */
+        z-index: 1001;
+        transform: translateY(-100%);
         transition: transform 0.4s ease-out;
-        z-index: 999; /* Asegura que esté por encima de la mayoría de los elementos */
     }
 
-    .nav-menu.active {
-        transform: translateY(0); /* Desliza hacia abajo */
+    .nav-menu.active.show {
+        transform: translateY(0);
     }
 
     .nav-menu li {
@@ -429,7 +391,7 @@ section h2::after {
     }
 
     .nav-menu li a {
-        display: block; /* Ocupa todo el ancho del elemento de la lista */
+        display: block;
         padding: 1rem;
         font-size: 1.1rem;
     }
@@ -452,7 +414,7 @@ section h2::after {
     }
 
     .project-card {
-        margin: 0 auto; /* Centra las tarjetas individualmente */
+        margin: 0 auto;
         max-width: 350px;
     }
 
@@ -468,14 +430,14 @@ section h2::after {
         gap: 0.8rem;
     }
 
-    .contact-form {
-        padding: 2rem;
+    .logo img {
+        max-height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
+    .logo img {
+        max-height: 45px;
     }
 
     .hero-content h1 {
@@ -501,7 +463,6 @@ section h2::after {
     }
 }
 
-/* Animaciones */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -524,7 +485,6 @@ section h2::after {
     }
 }
 
-/* Animación de la visibilidad para el IntersectionObserver */
 .project-card, .about-content, .contact-form {
     opacity: 0;
     transform: translateY(20px);
@@ -534,9 +494,4 @@ section h2::after {
 .project-card.visible, .about-content.visible, .contact-form.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.correo{
-    color:#2a2a72;
-    text-decoration: none;
 }
