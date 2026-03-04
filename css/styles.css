@@ -1,5 +1,5 @@
 :root {
-    --primary: #2a2a72;
+    --primary: #301727;
     --secondary: #f1bee0;
     --dark: #121212;
     --light: #f4f4f8;
@@ -333,7 +333,7 @@ section h2::after {
 }
 
 .correo {
-    color: #2a2a72;
+    color: #f1bee0;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
