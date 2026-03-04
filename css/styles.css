@@ -120,8 +120,28 @@ body {
     text-align: center;
     color: var(--light);
     background-color: rgb(96, 104, 110);
-    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
     padding-top: 60px;
+}
+
+.hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.55);
+    z-index: 0;
+}
+
+.hero-bg-layer--next {
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero.blend-active .hero-bg-layer--next {
+    opacity: 1;
 }
 
 .hero-content {
@@ -130,6 +150,8 @@ body {
     background-color: rgba(18, 18, 18, 0.7);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
