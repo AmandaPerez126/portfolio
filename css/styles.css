@@ -3,7 +3,7 @@
     --secondary: #009688;
     --dark: #121212;
     --light: #f4f4f8;
-    --accent: #ff5722;
+    --accent: #f1bee0;
 }
 
 * {
@@ -168,7 +168,7 @@ body {
 
 .btn:hover {
     transform: translateY(-7px);
-    background: #e64a19;
+    background: #f1bee0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
